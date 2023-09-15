@@ -14,12 +14,8 @@ let findTwoSum = (nums) => {
         if( iterationSum === sum) {
             return [left, right]
         }
-        else if(iterationSum < sum) {
-            left++;
-        }
-        else {
-            right--;
-        }
+        else if(iterationSum < sum) left++;
+        else right--;
     }
 }
 
