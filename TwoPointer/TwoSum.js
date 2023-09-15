@@ -1,4 +1,3 @@
-
 // Two Sum , input array should be sorted 
 
 let nums1 = [2, 7, 11, 15], sum1 = 9;;
@@ -11,13 +10,14 @@ let findTwoSum = (nums) => {
     let left = 0, right = nums.length -1;
 
     while(left < right) {
-        if(nums[left] + nums[right] === sum) {
+        let iterationSum = nums[left] + nums[right]
+        if( iterationSum === sum) {
             return [left, right]
         }
-        if(nums[left] + nums[right] < sum) {
+        else if(iterationSum < sum) {
             left++;
         }
-        if(nums[left] + nums[right] > sum ){
+        else {
             right--;
         }
     }
