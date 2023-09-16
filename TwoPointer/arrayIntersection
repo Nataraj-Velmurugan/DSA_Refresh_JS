@@ -1,0 +1,23 @@
+// array intersection - both array should be sorted
+
+let nums1 = [1, 2, 11, 12], nums2 = [2, 12];
+
+
+let findIntersection = (nums1, nums2) => {
+
+    let left=0, right=0;
+
+    while(left < nums1.length && right < nums2.length) {
+        if(nums1[left] == nums2[right]) {
+            console.log(nums1[left])
+            left++;
+            right++
+            
+        } else if (nums1[left] < nums2[right])  left++;
+          else right++;
+    }
+    
+}
+
+findIntersection(nums1, nums2)
+
