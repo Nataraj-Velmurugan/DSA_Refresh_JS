@@ -11,17 +11,11 @@ let reverseVowel = (chars, vowel) => {
         let temp;
         if(vowel.includes(chars[left]) && vowel.includes(chars[right])) {
             temp = chars[left];
-            chars[left] = chars[right];
-            chars[right] = temp;
-            left++;
-            right--;
+            chars[left++] = chars[right];
+            chars[right--] = temp;
         }
-        else if(vowel.includes(chars[left])) {
-            right--;
-        }
-        else {
-            left++;
-        }
+        else if(vowel.includes(chars[left])) right--;
+        else left++;
 
     }
 
