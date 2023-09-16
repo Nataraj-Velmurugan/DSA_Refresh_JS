@@ -9,7 +9,7 @@ let maxSum = (nums, k) => {
         maxSum += nums[i]
     }
     while(right < nums.length){
-        maxSum = maxSum + nums[right++] - nums[left++];
+        maxSum += nums[right++] - nums[left++];
         if(sum < maxSum) {
             sum = maxSum
         }
