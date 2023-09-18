@@ -1,21 +1,26 @@
-let nums1 = [8,4,2,3,11,15,2,1];
-let k1 = 2;
+// sliding window
 
+let nums = [1, 5, 2, 3, 7, 1]
 
-let maxSum = (nums, k) => {
-    let left = 0, right=k, sum = 0;
-    let maxSum = 0;
-    for(let i=0; i<k;i++) {
-        maxSum += nums[i]
-    }
-    while(right < nums.length){
-        maxSum += nums[right++] - nums[left++];
-        if(sum < maxSum) {
-            sum = maxSum
-        }
-    }
+let sum  = 0; target = 3
 
-    console.log(sum)
+for(let i=0; i<target; i++) {
+    sum += nums[i]
 }
 
-maxSum(nums1,k1)
+let right = target
+
+let findMaxTargetSubArray = (nums) => {
+    for(let i=0; i<nums.length-target; i++) {
+        let temp = 0;
+        temp = sum + nums[i+right] - nums[i]
+        if(temp > sum) sum = temp    
+    }
+
+    return sum
+}
+
+console.log(findMaxTargetSubArray(nums))
+
+
+
