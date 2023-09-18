@@ -5,7 +5,6 @@ let str1 = "abcabdcbb";
 let str = "pwwkew";
 
 let p = str.split("");
-console.log(p)
 
 let pMap = {};
 
@@ -29,4 +28,25 @@ let findLongestSubString = () => {
     return pMap
 }
 
-console.log(findLongestSubString());
+let set = new Set();
+
+
+
+let findLongestSubStringOptimized = () => {
+    let left = 0, right = 0, max = 0;
+
+    while (right < p.length) {
+        if (set.has(p[right]) == false) {
+            set.add(p[right++])
+            max = Math.max(max, set.size)
+        } else {
+            right = ++left;
+            set.clear();
+        }
+
+    }
+
+    return set
+}
+
+console.log(findLongestSubStringOptimized());
