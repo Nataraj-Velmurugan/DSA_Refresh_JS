@@ -5,6 +5,8 @@
 
 import { Stack } from '@datastructures-js/stack';
 
+import { Queue } from '@datastructures-js/queue';
+
 let s = '(()[]{})'
 
 var isValid = function(s) {
